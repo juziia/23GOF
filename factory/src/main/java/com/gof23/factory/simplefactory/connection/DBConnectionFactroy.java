@@ -27,8 +27,11 @@ public class DBConnectionFactroy {
     // 传入特定参数,返回需要的对象,简单工厂设计模式
     public Connection getConnection(String url,String username,String password) throws SQLException {
         Connection connection = DriverManager.getConnection(url, username, password);
+
         return connection;
     }
+
+
 
 
 }
