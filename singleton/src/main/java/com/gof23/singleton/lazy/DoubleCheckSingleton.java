@@ -8,7 +8,11 @@ public class DoubleCheckSingleton {
     private static DoubleCheckSingleton doubleCheckSingleton = null;
 
 
-    private DoubleCheckSingleton(){}
+    private DoubleCheckSingleton(){
+        if(doubleCheckSingleton != null){
+            throw new RuntimeException("不能够重复创建对象");
+        }
+    }
 
 
     /**
@@ -40,6 +44,11 @@ public class DoubleCheckSingleton {
          */
         return  doubleCheckSingleton;
 
+    }
+
+
+    public Object readResolve(){
+        return  this.getInstance();
     }
 
 }
