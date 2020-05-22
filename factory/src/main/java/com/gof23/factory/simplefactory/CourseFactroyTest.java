@@ -10,5 +10,8 @@ public class CourseFactroyTest {
         // 根据传入的ICourse的实现类的字节码对象反射创建对象
         ICourse course = courseFactory.create(JavaCourse.class);
         course.record();
+
+        ICourse pythonCourse = courseFactory.create(PythonFactory.class);
+        pythonCourse.record();
     }
 }
