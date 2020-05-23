@@ -19,4 +19,12 @@ public class PayStrategyTest {
         MessageResult result = payment.pay("1001", "1", 2000);
         System.out.println(result);
     }
+
+
+    @Test
+    public void test02(){
+        Order order = new Order("1001","100000000",2000);
+        MessageResult result = order.pay(PayKey.WECHARPAY);
+        System.out.println(result);
+    }
 }
